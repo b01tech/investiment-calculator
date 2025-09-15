@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Calculator } from '../../services/calculator/calculator';
 
 @Component({
   selector: 'app-user-input',
@@ -12,12 +13,16 @@ export class UserInput {
   annualInvestment = signal('0');
   expectedReturn = signal('5');
   duration = signal('10');
+  calculate = output();
+  calculatorService = inject(Calculator);
 
   onSubmit() {
-    console.log('submit');
-    console.log(this.initialInvestment());
-    console.log(this.annualInvestment());
-    console.log(this.expectedReturn());
-    console.log(this.duration());
+    const result = this.calculatorService.calculate(
+      Number(this.initialInvestment()),
+      Number(this.annualInvestment()),
+      Number(this.expectedReturn()),
+      Number(this.duration())
+    );
+    console.log(result);
   }
 }
