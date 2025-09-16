@@ -1,59 +1,104 @@
-# InvestmentCalculator
+# 📊 Calculadora de Investimentos
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.1.
+Uma aplicação web moderna desenvolvida em Angular para calcular e visualizar o crescimento de investimentos ao longo do tempo. A calculadora permite simular diferentes cenários de investimento considerando aportes iniciais, contribuições anuais, taxa de retorno esperada e período de investimento.
 
-## Development server
+## ✨ Funcionalidades
 
-To start a local development server, run:
+- **Cálculo de Investimentos**: Simule o crescimento do seu investimento ao longo dos anos
+- **Parâmetros Personalizáveis**:
+  - Investimento inicial
+  - Aporte anual
+  - Taxa de retorno esperada (%)
+  - Duração do investimento (anos)
+- **Resultados Detalhados**: Visualize ano a ano:
+  - Juros acumulados
+  - Valor total investido
+  - Valor ao final de cada ano
+  - Total de juros gerados
+- **Interface Responsiva**: Design moderno e adaptável para diferentes dispositivos
+
+## 🚀 Desenvolvimento
+
+### Pré-requisitos
+
+- Node.js (versão 18 ou superior)
+- npm ou yarn
+- Angular CLI
+
+### Instalação
+
+```bash
+# Clone o repositório
+git clone <url-do-repositorio>
+
+# Navegue até o diretório
+cd investment-calculator
+
+# Instale as dependências
+npm install
+```
+
+### Servidor de Desenvolvimento
+
+Para iniciar o servidor de desenvolvimento:
 
 ```bash
 ng serve
+# ou
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse `http://localhost:4200/` no seu navegador. A aplicação será recarregada automaticamente quando você modificar os arquivos fonte.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Outros Comandos
 
 ```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
+# Build para produção
 ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
+# Executar testes
 ng test
+
+# Build com watch mode
+ng build --watch --configuration development
 ```
 
-## Running end-to-end tests
+## 🏗️ Estrutura do Projeto
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── investment-results/    # Componente de exibição dos resultados
+│   │   └── user-input/           # Componente de entrada de dados
+│   ├── core/
+│   │   └── models/               # Interfaces e modelos de dados
+│   ├── services/
+│   │   └── calculator/           # Serviço de cálculos de investimento
+│   └── shared/
+│       └── header/               # Componente de cabeçalho
+├── assets/                       # Recursos estáticos
+└── styles.scss                   # Estilos globais
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 🛠️ Tecnologias Utilizadas
 
-## Additional Resources
+- **Angular 20.3.0** - Framework principal
+- **TypeScript** - Linguagem de programação
+- **RxJS** - Programação reativa
+- **SCSS** - Pré-processador CSS
+- **Jasmine & Karma** - Testes unitários
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📝 Como Usar
+
+1. **Investimento Inicial**: Digite o valor que você pretende investir inicialmente
+2. **Aporte Anual**: Informe o valor que você planeja investir anualmente
+3. **Taxa de Retorno**: Defina a taxa de retorno esperada (em porcentagem)
+4. **Duração**: Escolha por quantos anos você pretende manter o investimento
+5. **Calcular**: Clique no botão para ver os resultados detalhados
+
+Os resultados mostrarão uma tabela com a evolução do investimento ano a ano, incluindo juros acumulados e valor total.
+
+---
+
+*Este projeto foi gerado usando [Angular CLI](https://github.com/angular/angular-cli) versão 20.3.1.*
