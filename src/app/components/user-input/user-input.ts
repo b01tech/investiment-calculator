@@ -26,5 +26,12 @@ export class UserInput {
     });
     this.calculate.emit(result);
     console.log(result);
+    this.resetForm();
+  }
+  private resetForm() {
+    this.initialInvestment.set('0');
+    this.annualInvestment.set('0');
+    this.expectedReturn.set('5');
+    this.duration.set('10');
   }
 }
