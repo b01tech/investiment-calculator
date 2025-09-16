@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
+import { type InputDataModel } from '../../core/models/input-data-model';
+import { type OutputDataModel } from '../../core/models/output-data-model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Calculator {
-  calculate(
-    initialInvestment: number,
-    annualInvestment: number,
-    expectedReturn: number,
-    duration: number
-  ) {
-    const annualData = [];
+  calculate(data: InputDataModel) {
+    const { initialInvestment, annualInvestment, expectedReturn, duration } = data;
+    const annualData: OutputDataModel[] = [];
     let investmentValue = initialInvestment;
 
     for (let i = 0; i < duration; i++) {
